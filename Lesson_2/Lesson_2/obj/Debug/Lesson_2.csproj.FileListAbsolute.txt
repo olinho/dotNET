@@ -1,1 +1,6 @@
 C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\bin\Debug\Lesson_2.exe.config
+C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\obj\Debug\Lesson_2.csprojResolveAssemblyReference.cache
+C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\bin\Debug\Lesson_2.exe
+C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\bin\Debug\Lesson_2.pdb
+C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\obj\Debug\Lesson_2.exe
+C:\Users\Olek\Desktop\Studia\Technologie integracji oprogramowania (C#, .NET)\Homework\Lesson_2\Lesson_2\obj\Debug\Lesson_2.pdb
