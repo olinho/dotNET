@@ -9,9 +9,10 @@ namespace Lesson_2
 
     public abstract class Animal
     {
-        protected string Name { get; set; }
-        private float Weight { get; set; }
-        private bool HaveFur { get; set; }
+        // properties
+        public string Name { get; set; }
+        public float Weight { get; set; }
+        public bool HaveFur { get; set; }
 
         public abstract string Sound();
         public abstract string Trick();
@@ -38,13 +39,20 @@ namespace Lesson_2
 
         public Circus()
         {
-            Animals.Add(new Pony());
-            Animals.Add(new Pony());
-            Animals.Add(new Ant());
-            Animals.Add(new Elephant());
-            Animals.Add(new Giraffe());
-            Animals.Add(new Giraffe());
-            Animals.Add(new Cat());
+            Animals.Add(new Pony("Rosynant"));
+            Animals.Add(new Pony("Sekretatiat"));
+            Animals.Add(new Ant("Velvet"));
+            Animals.Add(new Elephant("Watermelon"));
+            Animals.Add(new Giraffe("SkyAchiever"));
+            Animals.Add(new Cat("Cat in shoes"));
+            Animals.Add(new Giraffe("Observer"));
+            Animals.Add(new Cat("Filemon"));
+        }
+
+        public Circus SetName(string name)
+        { 
+            this.Name = name;
+            return this;
         }
 
         public string AnimalsIntroduction()
@@ -67,7 +75,7 @@ namespace Lesson_2
             return result;
         }
 
-        public string Show()
+        public string ShowTricks()
         {
             string trickAssembling = "";
             string trickAssembling2 = "";
@@ -79,23 +87,32 @@ namespace Lesson_2
             }
             return trickAssembling2;
         }
+
+        public void ShowPresentation()
+        {
+            Console.WriteLine("Names of animals in {0} circous", Name);
+            foreach (var A in Animals)
+            {
+                Console.WriteLine(A.Name);
+            }
+        }
     }
 
     public class Zoo : IZoo
     {
         public List<Animal> Animals = new List<Animal>();
-        string Name { get; set; }
+        public string Name { get; set; }
 
         public Zoo()
         {
-            Animals.Add(new Pony());
-            Animals.Add(new Pony());
-            Animals.Add(new Ant());
-            Animals.Add(new Elephant());
-            Animals.Add(new Giraffe());
-            Animals.Add(new Cat());
-            Animals.Add(new Giraffe());
-            Animals.Add(new Cat());
+            Animals.Add(new Ant("Velvet"));
+            Animals.Add(new Elephant("Watermelon"));
+            Animals.Add(new Pony("Rosynant"));
+            Animals.Add(new Pony("Sekretatiat"));
+            Animals.Add(new Giraffe("SkyAchiever"));
+            Animals.Add(new Cat("Cat in shoes"));
+            Animals.Add(new Giraffe("Observer"));
+            Animals.Add(new Cat("Filemon"));
         }
 
 
@@ -104,22 +121,31 @@ namespace Lesson_2
             string soundAssembling = "";
             foreach (var A in Animals)
             {
-                String.Join("\n", new string[] { soundAssembling, A.Sound() });
+                soundAssembling = String.Join("\n", new string[] { soundAssembling, A.Sound() });
             }
+            
             return soundAssembling;
+        }
+
+        public Animal FirstWithFur()
+        {
+            Animal animal = Animals.FirstOrDefault(x => x.HaveFur == true);
+            return animal;
         }
     }
 
     public class Cat : Animal
     {
         string Color { get; set; }
+        
 
         public Cat()
         {
             Name = "cat";
+            HaveFur = true;
         }
 
-        public Cat(string name)
+        public Cat(string name) : this()
         {
             this.Name = name;
         }
@@ -147,8 +173,9 @@ namespace Lesson_2
         public Pony()
         {
             Name = "pony";
+            HaveFur = true;
         }
-        public Pony(string name)
+        public Pony(string name) : this()
         {
             Name = name;
         }
@@ -176,9 +203,10 @@ namespace Lesson_2
         public Ant()
         {
             Name = "ant";
+            HaveFur = false;
         }
 
-        public Ant(string name)
+        public Ant(string name) : this()
         {
             Name = name;
         }
@@ -205,9 +233,10 @@ namespace Lesson_2
         public Elephant()
         {
             Name = "elephant";
+            HaveFur = false;
         }
 
-        public Elephant(string name)
+        public Elephant(string name) : this()
         {
             Name = name;
         }
@@ -232,8 +261,9 @@ namespace Lesson_2
         public Giraffe()
         {
             Name = "giraffe";
+            HaveFur = false;
         }
-        public Giraffe(string name)
+        public Giraffe(string name) : this()
         {
             Name = name;
         }
@@ -257,7 +287,7 @@ namespace Lesson_2
     public interface ICircus
     {
         string AnimalsIntroduction();
-        string Show();
+        string ShowTricks();
         int Patter(int howMuch);
     }
 
@@ -268,40 +298,58 @@ namespace Lesson_2
 
     class Program
     {
+
         static void Main(string[] args)
         {
             Circus Cyrk1 = new Circus("Krakowski");
             //Console.WriteLine(Cyrk1.Show());
             //Console.ReadLine();
-            Circus Cyrk2 = new Circus("Wadowicki");
-            Circus Cyrk3 = new Circus("Krynicki");
+            //Circus Cyrk2 = new Circus().SetName("Poznański");
+            //Circus Cyrk3 = new Circus() { Name = "Krynicki" };
 
-            Console.WriteLine("Cyrk1 is called {0}", Cyrk1.Name);
+            //Console.WriteLine("Cyrk1 is called {0}", Cyrk1.Name);
+            //Console.WriteLine("Cyrk2 is called {0}", Cyrk2.Name);
+            //Console.WriteLine("Cyrk3 is called {0}", Cyrk3.Name);
 
-            Zoo Z1 = new Zoo();
-            Zoo Z2 = new Zoo();
-            Zoo Z3 = new Zoo();
 
-            showOptions();
+            Zoo Z1 = new Zoo() { Name = "Wrocławskie" };
+            //Zoo Z2 = new Zoo() { Name = "Krakowskie" };
+            //Zoo Z3 = new Zoo() { Name = "Białostockie" };
+            //Console.WriteLine("First found animal with fur {0}", Z1.FirstWithFur().Name);
+
             var key = Console.ReadKey();
             while (key.Key != ConsoleKey.Escape)
             {
-                showOptions();
+                Console.WriteLine("Press 'a' to show Animals in {0} circous", Cyrk1.Name);
+                Console.WriteLine("Press 'b' to show Program of  {0} circous", Cyrk1.Name);
+                Console.WriteLine("Press 'c' to listen Sounds in {0} zoo", Z1.Name);
+                Console.WriteLine("Press 'd' to show First Found animal with fur in {0} zoo", Z1.Name);
+                Console.WriteLine("Press 'e' to show Names in {0} zoo", Z1.Name);
                 key = Console.ReadKey();
                 if (key.Key == ConsoleKey.A)
                 {
-                    Console.WriteLine();
+                    Cyrk1.ShowPresentation();
+                }
+                else if (key.Key == ConsoleKey.B)
+                {
+                    Console.WriteLine(Cyrk1.ShowTricks());
+                }
+                else if (key.Key == ConsoleKey.C)
+                {
+                    Console.WriteLine(Z1.Sounds());
+                }
+                else if (key.Key == ConsoleKey.D)
+                {
+                    Console.WriteLine(Z1.FirstWithFur().Name);
+                }
+                else if (key.Key == ConsoleKey.E)
+                {
+                    foreach (var A in Z1.Animals)
+                    {
+                        Console.WriteLine(A.Name);
+                    }
                 }
             }
-        }
-
-        public static void showOptions()
-        {
-            Console.WriteLine("Press 'a' to show Animals in chosen circous");
-            Console.WriteLine("Press 'b' to show Program of  chosen circous");
-            Console.WriteLine("Press 'c' to listen Sounds in chosen zoo");
-            Console.WriteLine("Press 'd' to show First Found animal with fur in chosen zoo");
-            Console.WriteLine("Press 'c' to show Names in chosen zoo");
         }
     }
 
