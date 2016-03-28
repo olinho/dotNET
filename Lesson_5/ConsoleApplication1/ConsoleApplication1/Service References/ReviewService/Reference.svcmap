@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f95496e4-8016-4b75-949f-37fd02d1f116" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5ba2f2b3-c177-4307-8467-af1cabecd614" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/?disco" />
+    <MetadataFile FileName="Service_Review.wsdl" MetadataType="Wsdl" ID="724611c9-169c-42a6-b635-a4497c652923" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="7ab17786-6043-4b99-9ec0-69b0eff7d387" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="b65bb7dc-36ed-4b7d-9e5e-5eeb6435b938" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="21a2019f-c9ad-48e5-b0cd-30983da9b510" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Wcf_Review/Service_Review/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
